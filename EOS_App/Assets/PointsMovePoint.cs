@@ -6,9 +6,13 @@ public class PointsMovePoint : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     public static PointsMovePoint current;
+    public int score;
     private void Start()
     {
+        score = 0;
+        SetPoints(score);
         current = this;
+        GameEvents.current.OnPointChange += SetPoints;
     }
 
     public int GetPoints()
@@ -18,6 +22,7 @@ public class PointsMovePoint : MonoBehaviour
 
     public void SetPoints(int points)
     {
-        text.text = points.ToString();
+        score += points;
+        text.text = score.ToString();
     }
 }

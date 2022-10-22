@@ -20,9 +20,7 @@ public class AddTask : MonoBehaviour
     {
         GameEvents.current.AddTask(button);
         StartCoroutine(BlockRollOut());
-        print(PlayerPrefs.GetInt("task", 1));
         PlayerPrefs.SetInt("task", PlayerPrefs.GetInt("task", 1) + 1);
-        print(PlayerPrefs.GetInt("task"));
     }
 
     IEnumerator BlockRollOut()

@@ -33,9 +33,11 @@ public class GameEvents : MonoBehaviour
     public event Action<Button> OnAddTask;
     public event Action OnBlockAdded;
     public event Action OnBlockDeleted;
+    public event Action OnCountAward;
 
     public void PointChange(int point) => OnPointChange?.Invoke(point);
     public void AddTask(Button button) => OnAddTask?.Invoke(button);
     public void BlockDeleted() => OnBlockDeleted?.Invoke();
     public void BlockAdded() => OnBlockDeleted?.Invoke();
+    public void CountAward() => OnCountAward?.Invoke();
 }

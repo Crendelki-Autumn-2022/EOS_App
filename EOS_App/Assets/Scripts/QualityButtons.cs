@@ -12,8 +12,8 @@ public class QualityButtons : MonoBehaviour
     [SerializeField] private Transform left;
     [SerializeField] private Transform right;
     [SerializeField] private ScrollRect scroll;
-    private Vector3 lastPoint;
     private bool isMoved;
+    private int lastAddedPoint;
 
     private void Start()
     {
@@ -25,23 +25,29 @@ public class QualityButtons : MonoBehaviour
 
     private void ChooseButton(Button b)
     {
+        print("used");
         StartCoroutine(StunLocked());
 
         if (!isMoved)
         {
-            lastPoint = b.transform.position;
             if (b == button1)
             {
+                lastAddedPoint = 2;
+                GameEvents.current.PointChange(lastAddedPoint);
                 button2.transform.DOScale(Vector3.zero, 0.3f);
                 button3.transform.DOScale(Vector3.zero, 0.3f);
             }
             else if (b == button2)
             {
+                lastAddedPoint = 4;
+                GameEvents.current.PointChange(lastAddedPoint);
                 button1.transform.DOScale(Vector3.zero, 0.3f);
                 button3.transform.DOScale(Vector3.zero, 0.3f);
             }
             else
             {
+                lastAddedPoint = 6;
+                GameEvents.current.PointChange(lastAddedPoint);
                 button1.transform.DOScale(Vector3.zero, 0.3f);
                 button2.transform.DOScale(Vector3.zero, 0.3f);
             }
@@ -50,6 +56,8 @@ public class QualityButtons : MonoBehaviour
         }
         else
         {
+            print(lastAddedPoint);
+            LowerPoints();
             button1.transform.DOMove(left.position, 0.3f);
             button2.transform.DOMove(center.position, 0.3f);
             button3.transform.DOMove(right.position, 0.3f);
@@ -58,7 +66,6 @@ public class QualityButtons : MonoBehaviour
             button3.transform.DOScale(Vector3.one, 0.3f);
             isMoved = false;
         }
-        
     }
 
     IEnumerator StunLocked()
@@ -68,5 +75,10 @@ public class QualityButtons : MonoBehaviour
         scroll.enabled = false;
         yield return new WaitForSeconds(2f);
         scroll.enabled = true;
+    }
+
+    public void LowerPoints()
+    {
+        GameEvents.current.PointChange(-lastAddedPoint);
     }
 }

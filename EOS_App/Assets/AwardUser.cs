@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +10,6 @@ public class AwardUser : MonoBehaviour
     }
     private void Count()
     {
-        text.text = "Баллов получите вы: " + (PointsMovePoint.current.score/2+Random.Range(1,5)).ToString();
+        text.text = "Баллов получите вы: " + (PointsMovePoint.current.score / 2 + Random.Range(1, 5)).ToString();
     }
 }

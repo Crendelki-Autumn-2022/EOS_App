@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
 using TMPro;
+using UnityEngine;
 
 public class PersonalCabinet : MonoBehaviour
 {
@@ -46,6 +44,9 @@ public class PersonalCabinet : MonoBehaviour
     public void toGetReward()
     {
         panelReward.SetActive(true);
+        panelReward.transform.localScale = Vector3.zero;
+        print(panelReward.transform.localScale);
+        panelReward.transform.DOScale(Vector3.one, 1f);
     }
 
     public void GettingReward()

@@ -14,11 +14,17 @@ public class RashavellyScript : MonoBehaviour
         {
             if(item==panel){
                 item.SetActive(true);
-                if(item.CompareTag("panel")) bar.SetActive(true);
+                if (item.CompareTag("panel"))
+                {
+                    bar.SetActive(true);
+                    print(bar.name);
+                    print(bar.activeSelf);
+                }
             }
             else{
                 item.SetActive(false);
-                bar.SetActive(false);
+                if (!item.CompareTag("panel"))
+                    bar.SetActive(false);
             }
         }
     }

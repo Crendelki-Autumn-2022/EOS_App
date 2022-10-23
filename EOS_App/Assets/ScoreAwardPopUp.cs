@@ -12,5 +12,6 @@ public class ScoreAwardPopUp : MonoBehaviour
     public void SizeDown()
     {
         gameObject.transform.DOScale(Vector3.zero, 0.3f);
+        print("scale");
     }
 }

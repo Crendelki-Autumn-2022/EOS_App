@@ -2579,17 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f15472efd9cbfc42918a6afc749eae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 657069710}
-  - {fileID: 956891969}
-  - {fileID: 1439334476}
-  - {fileID: 1257952562}
-  - {fileID: 1687078189}
-  - {fileID: 1626942573}
-  - {fileID: 418450996}
-  - {fileID: 1382340133}
-  - {fileID: 670445206}
-  bar: {fileID: 1450912192}
 --- !u!223 &271414660
 Canvas:
   m_ObjectHideFlags: 0

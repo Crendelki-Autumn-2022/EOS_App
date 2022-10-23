@@ -8,5 +8,17 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TutorIrisha.unity
+    guid: e95729feca4fcfe40a7b03923b0cc49b
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 0aad3778cd855c4449340e52f82e827b
+  - enabled: 1
+    path: Assets/Scenes/SceneMaksZayavka.unity
+    guid: b14f1efbca2ae674f92af8110c52bb9b
+  - enabled: 1
+    path: Assets/Scenes/IrishaScene.unity
+    guid: 92ff4ab82b2634e4498e44ef5646ce9f
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6c91174d2a95d4a40ada3a6dc20dea0f, type: 2}
